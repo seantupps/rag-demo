@@ -1,0 +1,433 @@
+=============================================================
+ANALYST QUERY: What was the most popular Tesla Model in 2025?
+-------------------------------------------------------------
+
+Processing Query: What was the most popular Tesla Model in 20
+Retrieving top 5 relevant segments from 10-K...
+
+The provided information does not specify which Tesla model w
+ additional variants for Model 3 and Model Y, it does not pro
+AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS
+PS D:\Projects\google> python scripts/test_gemini.py
+
+--- Testing Model: gemini-2.5-flash ---
+PS D:\Projects\google> python scripts/test_gemini.py
+--- Testing Model: gemini-2.5-flash ---
+SUCCESS!
+Response: Hello there! How can I assist you today?...
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: What vehicles does Tesla currently manufacture
+Processing Query: What vehicles does Tesla currently manufact
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla currently manufactures the Model 3, Model Y, Model S, Me, began in 2022 [ITEM 1. BUSINESS].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: What was Tesla's biggest pain point of 2025?
+-------------------------------------------------------------
+
+Processing Query: What was Tesla's biggest pain point of 2025
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla's biggest pain point in 2025 was a significant decreaseSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERAS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS]. The compnufacturing operations," including potential impacts from "inUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPE
+PS D:\Projects\google> python scripts/test_gemini.py
+
+--- Testing Model: gemini-2.5-flash ---
+SUCCESS!
+Response: Hi there! How can I help you today?...
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: How has Tesla evolved from 2023 to 2025
+-------------------------------------------------------------
+
+Processing Query: How has Tesla evolved from 2023 to 2025
+Retrieving top 3 relevant segments from 10-K...
+
+ *  History restored 
+PS D:\Projects\google>
+
+
+
+
+
+
+
+
+
+
+
+PS D:\Projects\google>
+
+
+
+
+
+
+
+
+
+
+PS D:\Projects\google>
+
+
+
+
+
+
+
+PS D:\Projects\google>
+
+
+
+
+PS D:\Projects\google>
+
+
+PS D:\Projects\google>
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: How has Tesla evolved from 2023 to 2025?
+-------------------------------------------------------------
+
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: How has Tesla evolved from 2023 to 2025?
+-------------------------------------------------------------
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+ANALYST QUERY: How has Tesla evolved from 2023 to 2025?
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+=============================================================
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+PS D:\Projects\google> python rag_pipeline.py
+s unavailable in the provided context. The context primarily details Tesla's performance and strategic focus for 2025, with comparisons to 2024 [ITEM 7.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What is Cybercab?
+--------------------------------------------------------------------------------
+
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+--------------------------------------------------------------------------------
+
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: How does software factor into Tesla's business model?
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: How does software factor into Tesla's business model?
+--------------------------------------------------------------------------------
+
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+--------------------------------------------------------------------------------
+
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+Processing Query: What is Cybercab?
+Retrieving top 3 relevant segments from 10-K...
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+PS D:\Projects\google> python rag_pipeline.py
+
+Cybercab is Tesla's purpose-built autonomous vehicle and Robotaxi product, which is planned to be mass-produced and included in the Robotaxi service over time [ITEM 1., ITEM 7., ITEM 1A.].        
+PS D:\Projects\google> python rag_pipeline.py
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: How does software factor into Tesla's business model?
+--------------------------------------------------------------------------------
+
+Processing Query: How does software factor into Tesla's business model?
+Retrieving top 3 relevant segments from 10-K...
+
+Software is an integral component of Tesla's business model, enabling various functionalities and revenue streams:
+
+*   **Over-the-Air Updates and Upgrades**: Tesla vehicles are capable of remote over-the-air updates, allowing customers to purchase additional paid options and features through the Tesla app or in-vehicle interface. This also facilitates offering certain options and features on a subscription basis [ITEM 1. BUSINESS]. Over-the-air software updates are provisioned upon vehicle transfer and recognized as revenue over the expected ownership life of the vehicle [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **Subscription Services**: Customers can purchase subscriptions for features such as FSD (Supervised) and premium connectivity after vehicle delivery. Revenue from these subscriptions is recognized either over time or at a point in time, depending on contractual terms [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **FSD (Supervised) Features**: Revenue related to FSD (Supervised) features is recognized when functionality is delivered to the customer, with ongoing maintenance recognized over time [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **Remote Diagnostics and Service**: Vehicle connectivity, enabled by software, allows Tesla to diagnose and remedy many problems remotely and proactively, enhancing service efficiency [ITEM 1. BUSINESS].
+*   **Supercharger Network Support**: Tesla remains responsible for software updates, network operations, maintenance, and driver support for its Supercharger network, including those purchased and installed by third parties through the Supercharger for Business program [ITEM 1. BUSINESS].
+PS D:\Projects\google> python rag_pipeline.py  
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and ser recognized as revenue over the expected ownership life of the vehicle [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **Subscription Services**: Customers can purchase subscriptions for features such as FSD (Supervised) and premium connectivity after vehicle delivery. Revenue from these subscriptions is recognized either over time or at a point in time, depending on contractual terms [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **FSD (Supervised) Features**: Revenue related to FSD (Supervised) features is recognized when functionality is delivered to the customer, with ongoing maintenance recognized over time [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **Remote Diagnostics and Service**: Vehicle connectivity, enabled by software, allows Tesla to diagnose and remedy many problems remotely and proactively, enhancing service efficiency [ITEM 1. BUSINESS].
+*   **Supercharger Network Support**: Tesla remains responsible for software updates, network operations, maintenance, and driver support for its Supercharger network, including those purchased and installed by third parties through the Supercharger for Business program [ITEM 1. BUSINESS].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and ser*   **Subscription Services**: Customers can purchase subscriptions for features such as FSD (Supervised) and premium connectivity after vehicle delivery. Revenue from these subscriptions is recognized either over time or at a point in time, depending on contractual terms [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **FSD (Supervised) Features**: Revenue related to FSD (Supervised) features is recognized when functionality is delivered to the customer, with ongoing maintenance recognized over time [ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA].
+*   **Remote Diagnostics and Service**: Vehicle connectivity, enabled by software, allows Tesla to diagnose and remedy many problems remotely and proactively, enhancing service efficiency [ITEM 1. BUSINESS].
+*   **Supercharger Network Support**: Tesla remains responsible for software updates, network operations, maintenance, and driver support for its Supercharger network, including those purchased and installed by third parties through the Supercharger for Business program [ITEM 1. BUSINESS].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and ser*   **Remote Diagnostics and Service**: Vehicle connectivity, enabled by software, allows Tesla to diagnose and remedy many problems remotely and proactively, enhancing service efficiency [ITEM 1. BUSINESS].
+*   **Supercharger Network Support**: Tesla remains responsible for software updates, network operations, maintenance, and driver support for its Supercharger network, including those purchased and installed by third parties through the Supercharger for Business program [ITEM 1. BUSINESS].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and serInitializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and serANALYST QUERY: What can you tell me about tesla?
+--------------------------------------------------------------------------------
+
+Processing Query: What can you tell me about tesla?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and serRetrieving top 3 relevant segments from 10-K...
+
+Tesla is focused on integrating artificial intelligence ("AI") into real-world applications through products and services such as Full Self-Driving ("FSD") (Supervised) and Robotaxi, and by developing and commercializing AI robots ("Bots"), including Optimus [ITEM 1.]. The company leverages its operations, which include designing, developing, manufacturing, selling, and leasing high-performance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and services and other revenue streams such as used vehicle sales, non-warranty maintenance, collision services, paid Supercharging, automotive insurance, part sales, and retail merchandise sales [ITEM 1.].
+mance fully electric vehicles and energy generation and storage systems, to deliver AI-related and enhanced software and services [ITEM 1.]. Tesla's mission is to build a world of amazing abundance, differentiating itself through engineering expertise, advancements in real-world AI, a vertically integrated business model, and a focus on user experience [ITEM 1.].
+
+The company operates under two reportable segments:
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and services and other revenue streams such as used vehicle sales, non-warranty maintenance, collision services, paid Supercharging, automotive insurance, part sales, and retail merchandise sales [ITEM 1.].
+1.  **Automotive:** This segment encompasses the design, development, manufacturing, sales, and leasing of high-performance fully electric vehicles, sales of automotive regulatory credits, and services and other revenue streams such as used vehicle sales, non-warranty maintenance, collision services, paid Supercharging, automotive insurance, part sales, and retail merchandise sales [ITEM 1.].
+vices and other revenue streams such as used vehicle sales, non-warranty maintenance, collision services, paid Supercharging, automotive insurance, part sales, and retail merchandise sales [ITEM 1.].
+2.  **Energy Generation and Storage:** This segment focuses on energy products [ITEM 1.].
+
+In 2025, Tesla produced approximately 1.66 million consumer vehicles and delivered approximately 1.64 million consumer vehicles [ITEM 7.].
+
+Key financial highlights for 2025 include:
+*   Total revenues: $94,827 million [ITEM 8.].
+*   Total automotive revenues: $69,526 million [ITEM 8.].
+*   Energy generation and storage revenues: $12,771 million [ITEM 8.].
+*   Services and other revenues: $12,530 million [ITEM 8.].
+*   Gross profit: $17,094 million [ITEM 8.].
+*   Income from operations: $4,355 million [ITEM 8.].
+*   Net income attributable to common stockholders: $3,794 million [ITEM 8.].
+*   Diluted net income per share of common stock: $1.08 [ITEM 8.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+*   Income from operations: $4,355 million [ITEM 8.].
+*   Net income attributable to common stockholders: $3,794 million [ITEM 8.].
+*   Diluted net income per share of common stock: $1.08 [ITEM 8.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What does tesla do differently from other companies?
+--------------------------------------------------------------------------------
+
+Processing Query: What does tesla do differently from other companies?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla differentiates itself from other companies through several key aspects:
+*   Income from operations: $4,355 million [ITEM 8.].
+*   Net income attributable to common stockholders: $3,794 million [ITEM 8.].
+*   Diluted net income per share of common stock: $1.08 [ITEM 8.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What does tesla do differently from other companies?
+--------------------------------------------------------------------------------
+
+Processing Query: What does tesla do differently from other companies?
+Retrieving top 3 relevant segments from 10-K...
+
+*   Income from operations: $4,355 million [ITEM 8.].
+*   Net income attributable to common stockholders: $3,794 million [ITEM 8.].
+*   Diluted net income per share of common stock: $1.08 [ITEM 8.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What does tesla do differently from other companies?
+--------------------------------------------------------------------------------
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What does tesla do differently from other companies?
+--------------------------------------------------------------------------------
+
+Processing Query: What does tesla do differently from other companies?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla differentiates itself from other companies through several key aspects:
+
+*   **Mission and Business Model:** Tesla's mission, engineering expertise, advancements in real-world AI, vertically integrated business model, and focus on user experience differentiate it from 
+other companies [ITEM 1.].
+*   **Direct Sales and Service:** Tesla generally sells its products directly to customers through its website and company-owned stores, rather than relying on traditional dealer networks [ITEM 1.]. This infrastructure allows for better control over inventory costs, warranty service, pricing, and customer feedback, and enables faster problem identification and solution implementation compared to traditional automobile manufacturers and their dealer networks [ITEM 1.].
+*   **Sales and Marketing Strategy:** Historically, Tesla has achieved sales without relying on traditional advertising and at relatively low marketing costs [ITEM 1.].
+*   **AI and Software Integration:** The company is focused on bringing artificial intelligence into the real world through products and services like Full Self-Driving (Supervised) and Robotaxi, 
+and developing AI robots (Bots) [ITEM 1.]. Its vehicles are capable of remote over-the-air updates, allowing customers to purchase additional paid options and features through the Tesla app or in-vehicle interface, including subscription-based offerings [ITEM 1.]. Vehicle connectivity also enables remote and proactive diagnosis and remedy of many problems [ITEM 1.].
+*   **Cost of Ownership Focus:** Tesla strives to lower the cost of ownership for customers through continuous efforts to reduce manufacturing costs and by offering tailored financial and other services [ITEM 1.].
+PS D:\Projects\google> python rag_pipeline.py
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+
+================================================================================
+ANALYST QUERY: What are Teslas future plans?
+--------------------------------------------------------------------------------
+
+Processing Query: What are Teslas future plans?
+Retrieving top 3 relevant segments from 10-K...
+
+Tesla's future plans include:
+*   Bringing artificial intelligence into the real world through products and services like FSD (Supervised) and Robotaxi, and developing and commercializing AI robots (including Optimus) [ITEM 7.].
+*   Leveraging current operations (design, development, manufacture, sale, and lease of high-performance fully electric vehicles and energy generation and storage systems) to deliver AI-related and enhanced software and services [ITEM 7.].
+*   Focusing on long-term growth opportunities and making prudent investments [ITEM 7.].
+*   Growing and optimizing manufacturing capacity, including for newer vehicle models and future vehicles utilizing aspects of the next-generation platform [ITEM 7.].
+*   Maximizing production rate and efficiency at Gigafactories [ITEM 7.].
+*   Initiating the next phase of production growth through advances in autonomy and the introduction of new products, including those built on the next-generation vehicle platform [ITEM 7.].      
+*   Efficiently manufacturing proprietary cells designed for high-volume output, lower capital and production costs, and longer range [ITEM 7.].
+*   Improving vehicle performance, decreasing production costs, and increasing affordability and customer awareness [ITEM 7.].
+*   Advancing the development of Optimus, a general-purpose, autonomous humanoid robot, by capitalizing on strengths in real-world AI data [ITEM 7.].
+*   Focusing on profitable growth via a differentiated and efficiently managed product portfolio that leverages existing factories and production lines [ITEM 7.].
+*   Further improving and deploying FSD (Supervised) capabilities, including future autonomous capabilities through the purpose-built Robotaxi product, Cybercab [ITEM 7.].
+*   Reducing costs, increasing vehicle production, utilized capacity, and delivery capabilities [ITEM 7.].
+*   Improving and developing vehicles, battery, and AI compute technologies [ITEM 7.].
+*   Vertically integrating and localizing the supply chain [ITEM 7.].
+*   Expanding global infrastructure, including service and charging infrastructure [ITEM 7.].
+*   Ramping the production, increasing market penetration of energy storage products, developing battery technologies, and vertically integrating, localizing, and expanding the supply chain for energy products [ITEM 7.].
+
+
+
+Loading vector store from data/tesla/vector_store.json...
+Initializing Tesla 10-K Vector Store...
+Loading vector store from data/tesla/vector_store.json...
+Loading vector store from data/tesla/vector_store.json...
+ in 2025, representing a $1,034 million increase [ITEM 7.].
+*   **Restructuring and Other:** Increased from $0 million in 2023 to $494 million in 2025 [ITEM 7.].
+*   **Cost of Revenues:**
+    *   **Automotive sales:** Decreased from $65,121 million in 2023 to $56,267 million in 2025, a decrease of $8,854 million [ITEM 7.].
+    *   **Automotive leasing:** Decreased from $1,268 million in 2023 to $898 million in 2025, a decrease of $370 million [ITEM 7.].
+    *   **Total automotive cost of revenues:** Decreased from $66,389 million in 2023 to $57,165 million in 2025, a decrease of $9,224 million [ITEM 7.].
+    *   **Services and other:** Increased from $7,830 million in 2023 to $11,599 million in 2025, an increase of $3,769 million [ITEM 7.].
+    *   **Energy generation and storage segment:** Increased from $4,894 million in 2023 to $8,969 million in 2025, an increase of $4,075 million [ITEM 7.].
+    *   **Total cost of revenues:** Decreased from $79,113 million in 2023 to $77,733 million in 2025, a decrease of $1,380 million [ITEM 7.].

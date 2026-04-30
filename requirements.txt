@@ -1,0 +1,7 @@
+python-dotenv
+google-genai
+numpy
+fastapi
+pydantic
+uvicorn
+google-api-core

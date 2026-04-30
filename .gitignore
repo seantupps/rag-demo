@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+output.txt
+instructions.md
+.venv/
+env/
+venv/
+ENV/
+*.log
+.pytest_cache/
+.coverage
+htmlcov/

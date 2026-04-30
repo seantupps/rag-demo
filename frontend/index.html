@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Analyst Chatbot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --container-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-color: #ffffff;
+            --text-main: #e0e0e0;
+            --text-dim: #888;
+            --user-msg-bg: #1a1a1a;
+            --bot-msg-bg: transparent;
+            --input-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #app {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-color);
+            position: relative;
+        }
+
+        header {
+            padding: 16px 32px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        #chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            scrollbar-width: none;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        #chat-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .message {
+            max-width: 80%;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: var(--user-msg-bg);
+            padding: 16px 24px;
+            border-radius: 20px 20px 4px 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: var(--bot-msg-bg);
+            padding: 0;
+            border-radius: 0;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .bot-message:hover {
+            opacity: 0.8;
+        }
+
+        .bot-message::after {
+            content: '';
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 8px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .bot-message:hover::after {
+            opacity: 1;
+        }
+
+        /* Source Overlay */
+        #source-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        #source-modal {
+            background: #111;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 800px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        #source-header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #source-header h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        #source-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .source-item {
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .source-item:last-child {
+            border-bottom: none;
+        }
+
+        .source-meta {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .source-snippet {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        #close-source {
+            background: transparent;
+            color: var(--text-dim);
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #close-source:hover {
+            color: #fff;
+        }
+
+        .bot-message .content {
+            white-space: pre-wrap;
+        }
+
+        .bot-message .content b {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .bot-message .content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bot-message .content li {
+            margin-bottom: 8px;
+        }
+
+        .bot-message .citation {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        /* Chart Styles */
+        .chart-wrapper {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            height: 300px;
+        }
+
+        footer {
+            padding: 24px 40px 48px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-color);
+        }
+
+        .form-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 4px 8px;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 14px 16px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        button {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 4px;
+            padding: 12px 0;
+        }
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--text-dim);
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Business Intelligence - Tesla</h1>
+        </header>
+
+        <main id="chat-container">
+            <div class="message bot-message" onclick="showSources([])">
+                <div class="content">Hello. I am your specialized Tesla Equity Research Analyst. How can I assist you with the 2025 10-K filing?</div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="form-wrapper">
+                <form id="chat-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="user-input" placeholder="Ask about Tesla's 2025 performance..."
+                            autocomplete="off">
+                    </div>
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <div id="source-overlay">
+        <div id="source-modal">
+            <div id="source-header">
+                <h2>Knowledge Context Chunks</h2>
+                <button id="close-source">&times;</button>
+            </div>
+            <div id="source-content">
+                <!-- Sources will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const sourceOverlay = document.getElementById('source-overlay');
+        const sourceContent = document.getElementById('source-content');
+        const closeSource = document.getElementById('close-source');
+
+        function formatMarkdown(text) {
+            // Simple bold: **text** -> <b>text</b>
+            let html = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+            // Simple lists: lines starting with * or - -> <li>
+            if (html.includes('\n* ') || html.includes('\n- ')) {
+                const lines = html.split('\n');
+                let inList = false;
+                const newLines = lines.map(line => {
+                    if (line.match(/^[*|-]\s/)) {
+                        let content = line.replace(/^[*|-]\s/, '');
+                        if (!inList) {
+                            inList = true;
+                            return '<ul><li>' + content + '</li>';
+                        }
+                        return '<li>' + content + '</li>';
+                    } else {
+                        if (inList) {
+                            inList = false;
+                            return '</ul>' + line;
+                        }
+                        return line;
+                    }
+                });
+                if (inList) newLines.push('</ul>');
+                html = newLines.join('\n');
+            }
+
+            // Format citations
+            html = html.replace(/\[ITEM\s?(\d+\.?\w?)\]/g, '<span class="citation">Item $1</span>');
+
+            return html;
+        }
+
+        function appendMessage(role, content, sources = [], chartData = null) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${role}-message`;
+
+            if (role === 'bot') {
+                msgDiv.innerHTML = `<div class="content">${formatMarkdown(content)}</div>`;
+
+                // Add click listener for sources
+                msgDiv.addEventListener('click', () => showSources(sources));
+
+                // Render Chart if data exists
+                if (chartData) {
+                    const chartWrapper = document.createElement('div');
+                    chartWrapper.className = 'chart-wrapper';
+                    const canvas = document.createElement('canvas');
+                    chartWrapper.appendChild(canvas);
+                    msgDiv.appendChild(chartWrapper);
+
+                    renderChart(canvas, chartData);
+                }
+            } else {
+                msgDiv.textContent = content;
+            }
+
+            chatContainer.appendChild(msgDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function renderChart(canvas, data) {
+            new Chart(canvas, {
+                type: data.type || 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: data.datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#888', font: { family: "'Inter', sans-serif" } }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#666' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#666' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function showSources(sources) {
+            if (!sources || sources.length === 0) {
+                // No sources for initial greeting
+                return;
+            }
+
+            sourceContent.innerHTML = '';
+            sources.forEach((s, i) => {
+                const item = document.createElement('div');
+                item.className = 'source-item';
+                item.innerHTML = `
+                    <div class="source-meta">Snippet ${i + 1} &bull; ${s.source}</div>
+                    <div class="source-snippet">${s.content}</div>
+                `;
+                sourceContent.appendChild(item);
+            });
+
+            sourceOverlay.style.display = 'flex';
+        }
+
+        closeSource.addEventListener('click', () => {
+            sourceOverlay.style.display = 'none';
+        });
+
+        sourceOverlay.addEventListener('click', (e) => {
+            if (e.target === sourceOverlay) sourceOverlay.style.display = 'none';
+        });
+
+        function showLoading() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'message bot-message loading';
+            loadingDiv.id = 'loading-indicator';
+            loadingDiv.innerHTML = `
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            `;
+            chatContainer.appendChild(loadingDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function removeLoading() {
+            const loading = document.getElementById('loading-indicator');
+            if (loading) loading.remove();
+        }
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            // User message
+            appendMessage('user', message);
+            userInput.value = '';
+
+            // Bot loading state
+            showLoading();
+
+            try {
+                const response = await fetch('http://localhost:8000/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: message })
+                });
+
+                const data = await response.json();
+                removeLoading();
+
+                if (data.answer) {
+                    appendMessage('bot', data.answer, data.sources, data.chartData);
+                } else {
+                    appendMessage('bot', 'Error: Received empty response from server.');
+                }
+            } catch (error) {
+                removeLoading();
+                appendMessage('bot', 'Error: Could not connect to the RAG server. Ensure server.py is running.');
+                console.error(error);
+            } finally {
+                // Done
+            }
+        });
+    </script>
+</body>
+
+</html>

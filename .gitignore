@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 output.txt
 instructions.md
+notes.txt
 .venv/
 env/
 venv/

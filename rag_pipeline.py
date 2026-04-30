@@ -33,22 +33,22 @@ class TeslaRAG:
         self.tools = [
             {
                 "name": "render_financial_chart",
-                "description": "Renders a bar or line chart comparing financial metrics (e.g., revenue vs profit) over multiple years.",
+                "description": "REQUIRED TOOL for visualizing quantitative financial data. Use this whenever the context contains numerical data (revenue, profit, deliveries, etc.) across multiple time periods or categories that benefit from a bar or line chart.",
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "title": {"type": "string", "description": "The title of the chart"},
-                        "type": {"type": "string", "enum": ["bar", "line"], "description": "Type of chart"},
-                        "labels": {"type": "array", "items": {"type": "string"}, "description": "X-axis labels (e.g., ['2023', '2024', '2025'])"},
+                        "title": {"type": "string", "description": "Descriptive title for the chart"},
+                        "type": {"type": "string", "enum": ["bar", "line"], "description": "Use 'line' for trends over time, 'bar' for comparisons between categories or years."},
+                        "labels": {"type": "array", "items": {"type": "string"}, "description": "X-axis labels (e.g., years '2023', '2024')"},
                         "datasets": {
                             "type": "array",
                             "items": {
                                 "type": "object",
                                 "properties": {
-                                    "label": {"type": "string", "description": "The metric name (e.g., 'Total Revenue')"},
-                                    "data": {"type": "array", "items": {"type": "number"}, "description": "The numeric values"},
-                                    "borderColor": {"type": "string", "description": "CSS color for the line/border"},
-                                    "backgroundColor": {"type": "string", "description": "CSS color for the bars/fill"}
+                                    "label": {"type": "string", "description": "The metric name (e.g., 'Total Revenue ($M)')"},
+                                    "data": {"type": "array", "items": {"type": "number"}, "description": "The numeric values extracted from the context"},
+                                    "borderColor": {"type": "string", "description": "CSS color for the line/border (default: #E82127 for Tesla Red)"},
+                                    "backgroundColor": {"type": "string", "description": "CSS color for the bars/fill (default: rgba(232, 33, 39, 0.2))"}
                                 }
                             }
                         }
@@ -79,15 +79,27 @@ class TeslaRAG:
         # 2. GENERATION
         system_instruction = (
             "You are a Senior Tesla Equity Research Analyst. Your task is to answer questions "
-            "about Tesla's 2025 10-K filing with extreme precision and detail. \n\n"
-            "TOOLS:\n"
-            "Use the 'render_financial_chart' tool when asked to compare financial metrics over time.\n\n"
+            "about Tesla's 2025 10-K filing with extreme precision. \n\n"
+            "VISUALIZATION MANDATE:\n"
+            "If the KNOWLEDGE CONTEXT contains numerical data, financial metrics, or performance statistics "
+            "that span multiple years or categories, you MUST call the 'render_financial_chart' tool. \n"
+            "- Prioritize a 'line' chart ONLY when the y axis has a small range of values.\n"
+            "- Always prioritize a 'bar' chart for comparing different business segments or specific annual targets.\n"
+            "- If multiple metrics are available (e.g., Revenue and Net Income), include them as separate datasets in the same chart.\n\n"
+            "Do not include Totals in the chart unless specifically asked for.\n\n"
             "RULES:\n"
-            "1. Use ONLY the provided KNOWLEDGE CONTEXT to answer.\n"
-            "2. If the answer is not contained in the context, state clearly that the information is unavailable.\n"
-            "3. STYLE: Professional, concise, and data-driven.\n"
-            "4. CITATIONS: You MUST cite the specific SEC Item (Examples: [ITEM 1.], [ITEM 1A.], [ITEM 8]) for every major fact or number.\n"
-            "Place citations at the end of sentences or paragraphs."
+            "1. Use ONLY the provided KNOWLEDGE CONTEXT.\n"
+            "2. If the context has numbers but no explicit chart request, CREATE THE CHART ANYWAY to support your analysis.\n"
+            "3. STYLE: Professional, analytical, and data-heavy.\n"
+            "4. CITATIONS: Cite the specific SEC Item (e.g., [ITEM 1.], [ITEM 1A.], [ITEM 8] Only include the number.) for every fact or figure.\n\n"
+            "EXAMPLE 1 (Trend Analysis):\n"
+            "User: Compare total revenue for 2023 and 2024.\n"
+            "Context: Total revenue was $96,773 million in 2023 and $98,826 million in 2024.\n"
+            "Analyst Action: Call `render_financial_chart` with title 'Tesla Total Revenue', type 'line', labels ['2023', '2024'], and data [96773, 98826].\n\n"
+            "EXAMPLE 2 (Comparison Snapshot):\n"
+            "User: How did vehicle deliveries compare across models in 2024?\n"
+            "Context: Model 3/Y deliveries were 1,739,707 while Model S/X and Other models were 68,542.\n"
+            "Analyst Action: Call `render_financial_chart` with title '2024 Deliveries by Model', type 'bar', labels ['Model 3/Y', 'Model S/X/Other'], and data [1739707, 68542]."
         )
         
         contents = [
